@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bán hàng trực tuyến</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <h1>BÁN HÀNG TRỰC TUYẾN</h1>
+        <nav>
+            <a href="/">Trang chủ</a>
+            <a href="/products">Tất cả sản phẩm</a>
+            <a href="/products?categoryId=1">Điện thoại di động</a>
+            <a href="/products?categoryId=2">Máy tính bảng</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h2>Chào mừng đến cửa hàng</h2>
+        <p>Website bán hàng mini xây dựng bằng Spring Boot + Thymeleaf.</p>
+        <a class="button" href="/products">Xem sản phẩm</a>
+    </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 15",
+    "description": "Điện thoại Apple màn hình 6.1 inch, hiệu năng mạnh.",
+    "price": 15990000,
+    "image": "/images/iphone.png",
+    "categoryId": 1
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S24",
+    "description": "Điện thoại Samsung cao cấp với màn hình AMOLED.",
+    "price": 18990000,
+    "image": "/images/samsung.png",
+    "categoryId": 1
+  },
+  {
+    "id": 3,
+    "name": "Xiaomi Redmi Note 13",
+    "description": "Điện thoại phổ thông, pin lớn và màn hình đẹp.",
+    "price": 4990000,
+    "image": "/images/vivo-v60-5g-xam-thumb-600x600.jpg",
+    "categoryId": 1
+  },
+  {
+    "id": 4,
+    "name": "iPad Air",
+    "description": "Máy tính bảng Apple phục vụ học tập và giải trí.",
+    "price": 14990000,
+    "image": "/images/images.jpg",
+    "categoryId": 2
+  },
+  {
+    "id": 5,
+    "name": "Samsung Galaxy Tab S9",
+    "description": "Máy tính bảng Android màn hình lớn.",
+    "price": 16990000,
+    "image": "/images/oppo-reno15f-5g-12gb-256gb-hong-thumb-600x600.jpg",
+    "categoryId": 2
+  },
+  {
+    "id": 6,
+    "name": "Lenovo Tab M11",
+    "description": "Máy tính bảng giá hợp lý cho học tập và giải trí.",
+    "price": 5990000,
+    "image": "/images/335554-600x600-3.png",
+    "categoryId": 2
+  }
+]

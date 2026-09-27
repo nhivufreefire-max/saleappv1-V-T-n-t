@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${product.name}">Chi tiết sản phẩm</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <h1>BÁN HÀNG TRỰC TUYẾN</h1>
+        <nav>
+            <a href="/">Trang chủ</a>
+            <a href="/products">Danh sách sản phẩm</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <div class="detail-card">
+        <img th:src="${product.image}" th:alt="${product.name}">
+        <div>
+            <h2 th:text="${product.name}">Tên sản phẩm</h2>
+            <p th:text="${product.description}">Mô tả</p>
+            <p><b>Giá:</b>
+                <span th:text="${#numbers.formatDecimal(product.price, 0, 'POINT', 0, 'COMMA')} + ' đ'">
+                    0 đ
+                </span>
+            </p>
+            <p><b>Danh mục:</b> <span th:text="${categoryName}">Danh mục</span></p>
+            <a class="button" href="/products">← Quay lại danh sách</a>
+        </div>
+    </div>
+</main>
+</body>
+</html>

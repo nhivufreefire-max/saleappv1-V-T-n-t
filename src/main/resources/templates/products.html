@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sản phẩm</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <h1>BÁN HÀNG TRỰC TUYẾN</h1>
+        <nav>
+            <a href="/">Trang chủ</a>
+            <a href="/products">Tất cả</a>
+            <a href="/products?categoryId=1">Điện thoại di động</a>
+            <a href="/products?categoryId=2">Máy tính bảng</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h2>Danh sách sản phẩm</h2>
+
+    <form class="filter-form" action="/products" method="get">
+        <input type="text" name="keyword" placeholder="Tên sản phẩm..."
+               th:value="${keyword}">
+
+        <select name="categoryId">
+            <option value="">-- Tất cả danh mục --</option>
+            <option th:each="category : ${categories}"
+                    th:value="${category.id}"
+                    th:text="${category.name}"
+                    th:selected="${category.id == categoryId}">
+            </option>
+        </select>
+
+        <input type="number" name="fromPrice" placeholder="Giá từ"
+               th:value="${fromPrice}">
+        <input type="number" name="toPrice" placeholder="Giá đến"
+               th:value="${toPrice}">
+
+        <button type="submit">Tìm kiếm</button>
+        <a class="button secondary" href="/products">Xóa lọc</a>
+    </form>
+
+    <div class="product-grid">
+        <div class="product-card" th:each="product : ${products}">
+            <img th:src="${product.image}" th:alt="${product.name}">
+            <p th:text="'IMAGE = ' + ${product.image}"></p>
+<p>Đường dẫn: <span th:text="${product.image}"></span></p>
+            <h3 th:text="${product.name}">Tên sản phẩm</h3>
+            <p th:text="${product.description}">Mô tả</p>
+            <strong th:text="${#numbers.formatDecimal(product.price, 0, 'POINT', 0, 'COMMA')} + ' đ'">
+                0 đ
+            </strong>
+            <a class="button" th:href="@{/products/{id}(id=${product.id})}">
+                Xem chi tiết
+            </a>
+        </div>
+    </div>
+
+    <p class="empty" th:if="${#lists.isEmpty(products)}">
+        Không tìm thấy sản phẩm phù hợp.
+    </p>
+</main>
+</body>
+</html>
